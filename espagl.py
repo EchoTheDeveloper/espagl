@@ -27,6 +27,12 @@ class ESPAGL:
         elif shape_type == Shape.CIRCLE:
             pygame.draw.circle(self.screen, color, (position.x, position.y), 50)  # Draw a circle (radius 50)
 
+    def write_text(self, text, position, color=(255, 255, 255)):
+        font = pygame.font.Font(None, 36)  # Load a default font with size 36
+        text_surface = font.render(text, True, color)  # Render the text onto a surface
+        text_rect = text_surface.get_rect(center=(position.x, position.y))  # Get the rectangle containing the text
+        self.screen.blit(text_surface, text_rect)  # Draw the text surface onto the screen
+
     def update_screen(self):
         pygame.display.flip()
 
