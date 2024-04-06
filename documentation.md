@@ -112,6 +112,39 @@ Represents a 2D vector with `x` and `y` components.
 
 Enum class representing different shape types (`SQUARE`, `CIRCLE`, etc.).
 
+## Input Handling
+
+The ESPAGL class now includes features for defining and detecting custom input events within a Pygame-based game.
+add_input(name, keys)
+
+The add_input method allows you to define custom input mappings for your game. It associates a logical name with a list of keys that trigger this input.
+
+    name: The logical name for the custom input.
+    keys: A list of strings representing Pygame key names. These can include Pygame key constants (e.g., 'K_a', 'K_LEFT') or standard keyboard keys (e.g., 'a', 'left arrow').
+
+Example:
+```espagl.add_input('left', ['K_a', 'K_LEFT'])```
+
+This example maps the 'left' logical input to both the 'A' key and the left arrow key.
+get_input()
+
+The get_input method checks the current state of the keyboard and returns the name of the first custom input that is detected as pressed.
+
+Returns:
+
+    The name of the detected input (as specified in add_input), or None if no custom input is currently pressed.
+
+Example:
+
+python
+
+input_name = espagl.get_input()
+if input_name == 'left':
+    # Perform actions for the 'left' input
+    print("Left input detected!")
+
+In this example, if either the 'A' key or the left arrow key is pressed (as defined by the 'left' input), it will print "Left input detected!".
+
 ## Examples
 # Hello World:
 
