@@ -144,32 +144,18 @@ espagl.close_game()
 # Draw a decagon
 ```# main.py
 
-import pygame
 from espagl import ESPAGL, Vector2, Shape
-import math
 
 # Initialize ESPAGL
 espagl = ESPAGL()
 
 # Start the game window
-espagl.start_game("Decagon Drawing", Vector2(800, 600))
+espagl.start_game("Drawing a Square", Vector2(800, 600))
 
-# Function to calculate decagon vertices
-def calculate_decagon_vertices(center, radius):
-    vertices = []
-    for i in range(10):
-        angle = (2 * math.pi / 10) * i
-        x = center.x + radius * math.cos(angle)
-        y = center.y + radius * math.sin(angle)
-        vertices.append((x, y))
-    return vertices
-
-# Draw a decagon at the center of the screen
-center_position = Vector2(400, 300)
-decagon_radius = 150
-decagon_vertices = calculate_decagon_vertices(center_position, decagon_radius)
-
-espagl.draw_shape(Shape.POLYGON, center_position, (255, 0, 0), *decagon_vertices)
+# Draw a red square at the center of the screen
+center_position = Vector2(350, 250)  # Position of the top-left corner of the square
+square_color = (255, 0, 0)  # Red color
+espagl.draw_shape(Shape.SQUARE, center_position, square_color)
 
 # Update the screen to display changes
 espagl.update_screen()
@@ -183,4 +169,5 @@ while running:
 
 # Close the game
 espagl.close_game()
+
 ```
