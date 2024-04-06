@@ -149,7 +149,7 @@ In this example, if either the 'A' key or the left arrow key is pressed (as defi
 # Hello World:
 
 ```# main.py
-
+import pygame
 from espagl import ESPAGL, Vector2
 
 # Initialize ESPAGL
