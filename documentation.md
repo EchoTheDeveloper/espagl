@@ -143,20 +143,18 @@ espagl.close_game()
 ```
 
 # Draw a square
-```# main.py
+```
+from espagl import ESPAGL, Vector2
 import pygame
-from espagl import ESPAGL, Vector2, Shape
 
 # Initialize ESPAGL
 espagl = ESPAGL()
 
 # Start the game window
-espagl.start_game("Drawing a Square", Vector2(800, 600))
+espagl.start_game("Hello World!", Vector2(800, 400))
 
-# Draw a red square at the center of the screen
-center_position = Vector2(350, 250)  # Position of the top-left corner of the square
-square_color = (255, 0, 0)  # Red color
-espagl.draw_shape(Shape.SQUARE, center_position, square_color)
+# Draw "Hello World!" text at the center of the screen
+espagl.write_text("Hello World!", Vector2(300, 180), (0, 255, 0))
 
 # Update the screen to display changes
 espagl.update_screen()
@@ -170,5 +168,4 @@ while running:
 
 # Close the game
 espagl.close_game()
-
 ```
