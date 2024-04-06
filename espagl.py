@@ -1,6 +1,5 @@
-# espagl.py
-
 import pygame
+from pygame.locals import *
 
 class Vector2:
     def __init__(self, x, y):
@@ -16,6 +15,8 @@ class ESPAGL:
     def __init__(self):
         pygame.init()
         self.screen = None
+        self.clock = pygame.time.Clock()  # Clock to control frame rate
+        self.inputs = {}  # Dictionary to map input names to pygame key constants
 
     def start_game(self, window_name, size):
         self.screen = pygame.display.set_mode((size.x, size.y))
@@ -35,6 +36,18 @@ class ESPAGL:
 
     def update_screen(self):
         pygame.display.flip()
+        self.clock.tick(60)  # Limit frame rate to 60 FPS
 
     def close_game(self):
         pygame.quit()
+
+    def add_input(self, name, keys):
+        # Map the input name to a list of pygame key constants
+        self.inputs[name] = [getattr(pygame, key) for key in keys]
+
+    def get_input(self):
+        keys = pygame.key.get_pressed()
+        for name, key_list in self.inputs.items():
+            if any(keys[key] for key in key_list):
+                return name
+        return None
