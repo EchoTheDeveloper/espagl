@@ -1,5 +1,6 @@
 # ES-PAGL Documentation
 
+## THIS USES PYGAME AND JUST ADDS SOME FUNCTIONS FOR PYGAME. IF YOU USE THIS IN YOUR PROJECT LINK THIS GITHUB PAGE
 ES-PAGL (Echo's Super Python Amazing Graphics Library) is a Python library for simplified graphics rendering using Pygame. This library provides easy-to-use functions for initializing a graphics window, drawing text, and basic shapes.
 
 ## Usage
@@ -141,9 +142,9 @@ while running:
 espagl.close_game()
 ```
 
-# Draw a decagon
+# Draw a square
 ```# main.py
-
+import pygame
 from espagl import ESPAGL, Vector2, Shape
 
 # Initialize ESPAGL
