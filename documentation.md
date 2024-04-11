@@ -1,4 +1,7 @@
 # I WILL NO LONGER UPDATE THIS GITHUB PAGE, I AM INSTEAD USING ESPAGL IN MY GAME ENGINE THAT IS LINKED HERE: GITHUB LINK WILL BE UPLOADED SHORTLY
+
+# I updateed this repo one last time but I will not be updating documentation. If you want to continue writing in ESPAGL you may go on my profile and find hairmess game engine and I will also make a new python game library that will be built ontop of PySDL called ESDL (Echo's SDL aka Echo's Simple DirectMedia Library
+
 # IM ALSO REWRITING IT IN SDL
 
 # ES-PAGL Documentation
